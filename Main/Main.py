@@ -88,7 +88,7 @@ class InterfazGrafos:
 
         resumenTitulo = tk.Label(
             marcoPrincipal,
-            text="Análisis de ruta más corta en una matriz origen - destino",
+            text="Análisis de ruta menos costosa en una matriz origen - destino",
             font=("Arial", 18, "bold"),
             bg="white",
             fg="black"
@@ -277,7 +277,7 @@ class InterfazGrafos:
 
         titulo = tk.Label(
             self.contenedor,
-            text="Información",
+            text="Información sobre ruta menos costosa",
             font=("Arial", 24, "bold"),
             bg="white",
             fg="black"
@@ -323,7 +323,7 @@ class InterfazGrafos:
 
         self.labelDistanciaTitulo = tk.Label(
             marcoDatos,
-            text="Distancia:",
+            text="Costo total:",
             font=("Arial", 16, "bold"),
             bg="white",
             fg="black",
@@ -501,10 +501,6 @@ class InterfazGrafos:
             cerrados = []
         )
 
-    # =========================
-    # Actualización dinámica
-    # =========================
-
     def actualizarPantallaResultado(self, ruta, distancia, textoCambio, cerrados):
         # Actualizar imagen
         self.generarImagenDesdeGrafo(ruta, cerrados)
@@ -590,7 +586,7 @@ class InterfazGrafos:
             else:
                 textoCambio = (
                     "Tras el cierre de " + str(self.nodosCerrados) +
-                    " la distancia ha aumentado un " + str(round(porcentaje, 3)) + "%.\n" +
+                    " el costo total ha aumentado un " + str(round(porcentaje, 3)) + "%.\n" +
                     "Categoría: " + str(categoria)
                 )
 
